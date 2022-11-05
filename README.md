@@ -1,3 +1,8 @@
+- `npm install -g mountebank`
+- mb --configfile  superhero.json
+- http://localhost:2727/heroes
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
