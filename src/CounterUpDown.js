@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useHero} from './useHero'
 
 const ExampleCounter = () => {
   const [count, setCount] = useState(0)

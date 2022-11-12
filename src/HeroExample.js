@@ -1,25 +1,9 @@
 import {useEffect} from 'react'
 import {useState} from 'react'
+import {useHero} from './useHero'
 
 export function HeroExample(props) {
-  const [hero, setHero] = useState({
-    superhero: '',
-    power: '',
-    powerName: '',
-    loading: true,
-    heroes: [],
-  })
-
-  useEffect(() => {
-    fetch(`http://localhost:2727/heroes`)
-      .then((res) => res.json())
-      .then((data) => {
-        setHero({
-          ...hero,
-          heroes: [...hero.heroes, ...data],
-        })
-      })
-  }, [])
+  const [hero, setHero] = useHero()
 
   return (
     <>
