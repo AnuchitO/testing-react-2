@@ -4,10 +4,10 @@ export function HeroExample(props) {
   const [hero, setHero] = useState({
     superhero: '',
     power: '',
-    optionPower: '',
+    powerName: '',
     loading: true,
-    heroes: [],
   })
+  const [heroes, setHeroes] = useState([])
 
   return (
     <>
@@ -17,10 +17,10 @@ export function HeroExample(props) {
         type="text"
         value={hero.superhero}
         onChange={(e) => {
-          setHero((current) => ({
-            ...current,
+          setHero({
+            ...hero,
             superhero: e.target.value,
-          }))
+          })
         }}
       />
       <br />
@@ -36,9 +36,9 @@ export function HeroExample(props) {
 
       <br />
       <select
-        value={hero.optionPower}
+        value={hero.powerName}
         onChange={(e) => {
-          setHero((current) => ({...current, optionPower: e.target.value}))
+          setHero({...hero, powerName: e.target.value})
         }}
       >
         <option value="">Select Power</option>
@@ -59,6 +59,8 @@ export function HeroExample(props) {
       >
         Add Hero
       </button>
+
+      {/*  {hero.name} : {hero.power} : {hero.powerName} */}
     </>
   )
 }
