@@ -26,7 +26,7 @@ export const Hi = ({name}) => {
   useEffect(() => {
     setLoading(true)
   }, [])
-	
+
   return (
     <>
       <h1>
