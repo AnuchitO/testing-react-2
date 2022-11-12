@@ -3,6 +3,7 @@ import {Hi} from './Hi'
 import {ShowCounter} from './ShowCount'
 import ExampleCounter from './CounterUpDown'
 import ExampleChangeLanguage from './ChangeLanguage'
+import {HeroExample} from './HeroExample'
 function App() {
   return (
     <div className="App">
@@ -10,15 +11,18 @@ function App() {
         {/* <Hi name={'Nong'} age={10} /> */}
         {/* <Hi name="React!!!!" age={12} /> */}
         {/* <Hi name="AnuchiOiiiii" age={32} /> */}
-        <ShowCounter />
+        {/* <ShowCounter /> */}
         <br />
         <br />
         <br />
-        <ExampleCounter />
+        {/* <ExampleCounter /> */}
         <br />
         <br />
         <br />
-        <ExampleChangeLanguage />
+        {/* <ExampleChangeLanguage /> */}
+        <br />
+        <br />
+        <HeroExample />
       </header>
     </div>
   )
