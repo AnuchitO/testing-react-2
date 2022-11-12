@@ -2,13 +2,13 @@ export function HeroExample(props) {
   return (
     <>
       <label htmlFor="superhero"> Superhero Name: </label>
-      <input id="superhero" type="text" onChange={(e) => {}} />
+      <input id="superhero" type="text" />
       <br />
       <label htmlFor="power"> Superhero Power: </label>
-      <input id="power" type="text" onChange={(e) => {}} />
+      <input id="power" type="text" />
 
       <br />
-      <select onChange={(e) => {}}>
+      <select>
         <option value="">Select Power</option>
         <option value="Flying">Flying</option>
         <option value="Fire">Fire</option>
@@ -19,9 +19,7 @@ export function HeroExample(props) {
         <option value="Wind">Wind</option>
       </select>
       <br />
-      <button className="myButton" onClick={() => {}}>
-        Add Hero
-      </button>
+      <button className="myButton">Add Hero</button>
     </>
   )
 }
