@@ -9,6 +9,11 @@ export function HeroExample(props) {
     <>
       <label htmlFor="superhero"> Superhero Name: </label>
       <input
+        style={{
+          width: '50%',
+          border: '3px solid #d7dbdf',
+          borderRadius: '0em 0 0 0em',
+        }}
         id="superhero"
         type="text"
         value={hero.superhero}
@@ -22,6 +27,11 @@ export function HeroExample(props) {
       <br />
       <label htmlFor="power"> Superhero Power: </label>
       <input
+        style={{
+          width: '50%',
+          border: '3px solid #d7dbdf',
+          borderRadius: '0em 0 0 0em',
+        }}
         id="power"
         type="text"
         value={hero.power}
