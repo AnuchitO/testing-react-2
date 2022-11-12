@@ -76,6 +76,7 @@ export function HeroExample(props) {
       >
         Add Hero
       </button>
+      {hero.loading && <div>loading...</div>}
       {hero.heroes.length > 0 && (
         <ul>
           {hero.heroes.map((hero, index) => {

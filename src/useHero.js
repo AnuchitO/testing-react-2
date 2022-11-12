@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import * as http from './http'
 
 export function useHero() {
   const [hero, setHero] = useState({
@@ -10,19 +11,19 @@ export function useHero() {
   })
 
   useEffect(() => {
-    fetch(`http://localhost:2727/heroes`)
+    // setTimeout(() => {
+    http
+      .get(`http://localhost:2727/heroes`)
       .then((res) => res.json())
       .then((data) => {
         setHero({
           ...hero,
+          loading: false,
           heroes: [...hero.heroes, ...data],
         })
       })
+    // }, 3000)
   }, [])
 
   return [hero, setHero]
 }
-
-// setTimeout(() => {
-
-// }, 3000)
