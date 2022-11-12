@@ -19,3 +19,17 @@ test('show counter with user name', () => {
 
   expect(screen.getByText(/Nong: 0 times/i)).toBeInTheDocument()
 })
+
+test('get by role user', () => {
+  // Arrage
+  render(<ShowCounter />)
+  const name = screen.getByRole('textbox')
+  userEvent.type(name, 'Nong')
+
+  // Act
+  const btn = screen.getByRole('button', {name: 'Click here'})
+  userEvent.click(btn)
+
+  // Assert
+  expect(screen.getByText(/Nong: 1 times/i)).toBeInTheDocument()
+})
