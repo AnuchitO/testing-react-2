@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import {useState} from 'react'
 
 export function HeroExample(props) {
@@ -8,6 +9,17 @@ export function HeroExample(props) {
     loading: true,
     heroes: [],
   })
+
+  useEffect(() => {
+    fetch(`http://localhost:2727/heroes`)
+      .then((res) => res.json())
+      .then((data) => {
+        setHero({
+          ...hero,
+          heroes: [...hero.heroes, ...data],
+        })
+      })
+  }, [])
 
   return (
     <>
