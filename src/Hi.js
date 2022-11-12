@@ -4,6 +4,7 @@ export const Hi = ({name}) => {
   const [count, setCount] = useState(1)
   const [age, setAge] = useState(10)
   const [heroes, setHeroes] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const showCount = () => {
     // setTimeout(() => {
@@ -12,14 +13,20 @@ export const Hi = ({name}) => {
   }
 
   useEffect(() => {
-    console.log('useEffect')
-    fetch(`http://localhost:2727/heroes`)
-      .then((res) => res.json())
-      .then((data) => {
-        setHeroes(data)
-      })
-  }, [])
+    if (loading) {
+      console.log('useEffect')
+      fetch(`http://localhost:2727/heroes`)
+        .then((res) => res.json())
+        .then((data) => {
+          setHeroes(data)
+        })
+    }
+  }, [loading])
 
+  useEffect(() => {
+    setLoading(true)
+  }, [])
+	
   return (
     <>
       <h1>
