@@ -6,8 +6,8 @@ export function HeroExample(props) {
     power: '',
     powerName: '',
     loading: true,
+    heroes: [],
   })
-  const [heroes, setHeroes] = useState([])
 
   return (
     <>
@@ -55,12 +55,32 @@ export function HeroExample(props) {
         className="myButton"
         onClick={() => {
           console.log(hero, null, 2)
+          setHero({
+            ...hero,
+            heroes: [
+              ...hero.heroes,
+              {
+                name: hero.superhero,
+                power: hero.power,
+                powerName: hero.powerName,
+              },
+            ],
+          })
         }}
       >
         Add Hero
       </button>
-
-      {/*  {hero.name} : {hero.power} : {hero.powerName} */}
+      {hero.heroes.length > 0 && (
+        <ul>
+          {hero.heroes.map((hero, index) => {
+            return (
+              <li key={index}>
+                {hero.name} : {hero.power} : {hero.powerName}
+              </li>
+            )
+          })}
+        </ul>
+      )}
     </>
   )
 }
