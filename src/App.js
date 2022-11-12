@@ -2,7 +2,7 @@ import './App.css'
 import {Hi} from './Hi'
 import {ShowCounter} from './ShowCount'
 import ExampleCounter from './CounterUpDown'
-
+import ExampleChangeLanguage from './ChangeLanguage'
 function App() {
   return (
     <div className="App">
@@ -15,6 +15,10 @@ function App() {
         <br />
         <br />
         <ExampleCounter />
+        <br />
+        <br />
+        <br />
+        <ExampleChangeLanguage />
       </header>
     </div>
   )
